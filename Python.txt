@@ -1,0 +1,289 @@
+Online Host Services
+
+Heroku
+https://www.pythonanywhere.com/
+amazon aws free
+openshift
+
+
+Virtual Environment allows us to make us differenet python environments to save us from frequent updates in packages etc
+
+	-- > pip install virtualenv   -- install virtualenv in your system
+
+	--> mkdir example
+	-->	cd example
+	-->	virtualenv project1_env -- create virtual environment
+
+		
+	-->	source project1_env/bin/activate  --  now we are in our environment
+							[Environment name will always be on top of terminal when activated]
+							 now you can install packages in env						
+
+### Some Useful Commands to use in environment
+
+	--> which python -- it will tell the path of python it is using
+	--> which pip	 -- it will tell the path of pip    it is using
+	--> pip list	 -- list all the installed pips in environment(new env starts with 2 pips)
+	--> pip install django -- will install django in env
+	--> pip freeze --local > requirenments.txt  -- create version files of packages
+	--> deactivate 	 -- get out of your virtual env
+	--> pip install -r requirements.txt  -- to install versions from req.txt file
+	
+Django Learning
+
+https://www.youtube.com/watch?v=4RWFvXDUmjo
+
+
+To - Do App
+
+After Activating Environment
+
+pip3 install django
+
+
+run - django-admin startproject todo -----------create base folder for the app
+
+goto app folder
+
+cd todo
+python mange.py runserver -----to run server
+
+
+
+All configurations will happen in settings.py
+Url Routing
+DB table & others
+
+
+
+
+Create table of users in database so we can see the django admin panel
+
+
+run - python manage.py migrate ---first migration
+		python will be default create relation with sql lite
+		This will create all the settings & tables that django wants 
+		
+		
+Now create first user
+
+run  - python manage.py createsuperuser
+
+
+after run server again
+
+goto 127.0.0.1:8000/admin
+
+
+
+after run
+  - python mange.py startapp tasks
+  
+  it will create my task app with basic model view files 
+  and now tell django about your app goto settings.py -- installed_apps [,'tasks',]
+  
+   
+now go into view of your app & create function that will return http response---check view file
+
+now we need to configure our url setup,so create urls.py file in tasks
+
+check url.py file then goto base urls.py file in todo folder 
+
+
+till here your page will display
+
+now create templates folder in tasks then cd templates -- mkdir tasks -- new file list.html
+
+now before more routing do some work for database
+
+goto models.py in tasks -- & create an item
+
+create a model named class
+
+
+from django.db import models
+
+# Create your models here.
+
+class Trans(models.Model):
+	account = models.CharField(max_length=200)
+	amount = models.IntegerField(max_length=200)
+	date  =  models.DateTimeField(auto_now_add=True)
+	note = models.CharField(max_length=255)
+
+	def __str__(self):
+		return self.account
+
+
+
+
+
+==============================================================================================================
+
+Blog on Django
+
+
+Virtual Env -- cd  blog_env
+
+django-admin.py startproject projectname  ------ create project
+cd projectname	--------- goto project folder 
+python3 manage.py migrate  ------------- run this to create basic users database table
+python3 manage.py createsuperuser   ---------- create the base user
+python3 manage.py startapp theappname  ----------- create the app you want to build
+
+goto projectname/settings.py  -- INSTALLED_APPS = [ ,'theappname',] ----to register the app you just build
+
+now goto  projectname/urls.py & make new route for your app
+
+from django.contrib import admin
+from django.urls import path , include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('' , include('theblog.urls'))
+]
+
+
+now in your appfolder create urls.py file & the following to add route
+
+from django.urls import path 
+from . import views
+
+urlpatterns = [
+    
+    path('' , views.home , name="home"),
+]
+
+
+Creating your First View
+
+in views define home
+
+
+def home(request):
+	return render(request  , 'home.html'  , {})
+
+
+
+create home.html in templates folder
+ and this file will display
+
+
+
+Now to Basic work on Database
+
+go to models.py
+
+
+from django.contrib.auth.models import User-----------------will import user
+
+
+# Create your models here. -- create DB table
+
+class Post(models.Model):
+	title = models.CharField(max_length=255)
+	author = models.ForeignKey(User, on_delete=models.CASCADE)
+	body = models.TextField()
+
+
+
+
+	def __str__(self):
+		return self.title + ' | ' + self.author   ----- return the string in admin page
+
+
+
+now register your model in admin.py
+
+
+Now show all the posts from DB in to page & make them clickable so we can open indiviual post
+
+We will use class based views 
+
+
+
+
+	
+
+Styling with Bootstrap
+
+
+create base.html file & extend that file into other html pages so we not have to copy everything on everypagel
+
+
+
+Add Blog Post Page
+
+
+
+Styling to add Post Page Completed
+
+
+
+
+Update & edit Post
+
+
+
+Adding Editing Editing all done till video 8 19 Sep 2020
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Video 5 Completed  18 Sep 20

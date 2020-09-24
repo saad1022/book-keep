@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content%}
+
+
+
+<div class="row"><div class="col-md-4"></div><h1>All Transactions</h1></div>
+<div class="pt-4 "></div>
+
+
+<div class="container">
+	
+	<table class="table table-hover table-striped">
+	  <thead  class="thead-dark">
+	    <tr>
+	      <th scope="col">Date</th>
+	      <th scope="col">Edited On</th>
+	      <th scope="col">Account</th>
+	      <th scope="col">Amount</th>
+	      <th scope="col"></th>
+	    </tr>
+	  </thead>
+	  <tbody>
+
+	  	{% for entry in object_list %}	
+	    <tr>
+	      <th scope="row"><a href="{% url 'entrydetail' entry.pk %}">{{ entry.date_created}}</a></th>
+	      <td>{{ entry.date_edited}}</td>
+	      <td><h3><a href="{% url 'entrydetail' entry.pk %}" class="badge badge-primary">{{entry.account}}</a></h3></td>
+	      <td><h3><a href="{% url 'entrydetail' entry.pk %}" class="badge badge-success">{{entry.amount}} </a></h3></td>	   
+	      <td><a href="{% url 'editentry' entry.pk %}" class="badge badge-info ">Edit</a>&nbsp;&nbsp;<a href="{% url 'delentry' entry.pk %}" class="badge badge-danger"> Delete</a></td>
+	    </tr>
+	    {% endfor %}
+	  </tbody>
+	</table>
+</div>
+
+
+
+
+
+<!-- <ul>
+{% for entry in object_list %}
+	<li><a href="{% url 'entrydetail' entry.pk %}">{{entry.account}} - {{entry.amount}} </a><br/>
+	{{ entry.reason}} --- {{ entry.date_created}}  -- {{ entry.date_edited}}-<a href="{% url 'editentry' entry.pk %}">Edit</a><a href="{% url 'delentry' entry.pk %}"> Delete</a>
+	</li>
+
+{% endfor %}
+</ul> -->
+
+
+{% endblock %}

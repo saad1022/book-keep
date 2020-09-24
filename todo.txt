@@ -1,0 +1,33 @@
+Calculate this month expense --
+
+Calculate this month income --
+
+Calculate this Year Expense --
+Calculate this Year Income --
+Calculate Current Balance --
+
+
+
+-- Calculate all the above by taking home & saad account also
+
+Loan Given				Home Given
+Loan Rece				Home Rec
+
+
+--- make Dashboard ,consisting of
+
+Table of All accounts with this month , previous month , total year values
+Pie chart of this month expense
+Bar chart of this year Expenses vs Income
+
+
+
+https://www.youtube.com/watch?v=J7xaESAddDQ&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi&index=6
+
+complete all videos , video till 6 is done
+
+
+bootstrap
+https://getbootstrap.com/docs/4.0/layout/overview/
+https://www.w3schools.com/bootstrap4/bootstrap_typography.asp
+https://uicookies.com/bootstrap-datatable/

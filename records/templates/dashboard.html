@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content%}
+<h2>Dashboard</h2>
+
+<ul class="list-group">
+  <li class="list-group-item">Total Expenses 		: {{ expenses }}</li>
+  <li class="list-group-item">Total Income 			: {{ extrainfo }}</li>
+  <li class="list-group-item">This Month Expenses 	: {{ month_expenses }}</li>
+  <li class="list-group-item">This Month Income 	: {{ month_income }}</li>
+  <li class="list-group-item">YTD Expenses 			: {{ year_expense }}</li>
+  <li class="list-group-item">YTD Income 			: {{ year_income }}</li>
+  <li class="list-group-item">Current Balance 		: {{ current_balance }}</li>
+  <li class="list-group-item">Saad Account	 		: {{ saad_balance }}</li>
+  <li class="list-group-item">Home Account  		: {{ home_balance }}</li>
+</ul>
+
+{% endblock %}

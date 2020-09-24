@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title%} {{ entry.account }} {% endblock %}
+
+{% block content%}
+
+
+
+<h1>Transaction Detail :</h1>
+<hr/>
+<br/>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<h3>Amount :</h3> <h3>{{entry.amount}}</h3>
+		</div>
+		<div class="col-md-6">
+			<h2>Date : </h2> <h2>{{entry.date_created}}</h2>
+		</div>			
+	</div>
+	<div class="row">
+	<h2>Accout : </h2> <h2>{{entry.account}}</h2>		
+	</div>
+	<div class="row">
+	<h2>Reason : </h2> <h2>{{entry.reason}}</h2>		
+	</div>
+	<div class="row">
+	<h2>Date : </h2> <h2>{{entry.date_created}}</h2>		
+	</div>
+	<div class="row">
+	<h2>Updated : </h2> <h2>{{entry.date_edited}}</h2>		
+	</div>
+
+<br/><br/>
+
+<a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+
+</div>
+
+{% endblock %}

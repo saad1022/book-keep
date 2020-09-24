@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title%} Delete Entry {% endblock %}
+
+
+
+{% block content%}
+
+
+
+<h1>Delete Entry</h1>
+<h3>Delete : {{ entry.account }}</h3>
+<div  class="form-group">
+<form method="POST">
+	{% csrf_token %}
+	<strong>Are you Sure ?</strong><br/>
+	<button class="btn btn-secondary">Delete</button>
+	<a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+
+
+</form>
+</div>
+
+
+{% endblock %}

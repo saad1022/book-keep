@@ -1,0 +1,33 @@
+Create Important files
+
+Procfile   -- add in file --- web: gunicorn book.wsgi --log-file
+requirenments.txt
+
+----------------------------------------------------
+
+in settings.py
+
+ALLOWED_HOSTS = ['*']
+
+
+create git repo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -13,13 +13,23 @@ ALLOWED_HOSTS = ['*']
 create git repo
 
 
+upload to git repo
+
+then in cli heroku create  -- will create app & give us link & git repo link
+
+https://fast-mesa-75288.herokuapp.com/	 |	 https://git.heroku.com/fast-mesa-75288.git
+
+
+heroku git:remote -a fast-mesa-75288
+
+
+heroku config:set DISABLE_COLLECTSTATIC=1
 
 
 
+now post your files to heroku 
 
-
-
-
+git push heroku master
 
 
 
